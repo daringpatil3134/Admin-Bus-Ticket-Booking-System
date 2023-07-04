@@ -39,6 +39,7 @@
     $busData = json_decode($busJson);
     $adminData = json_decode($adminJson);
     $bookingData = json_decode($bookingJson);
+    $queryData = json_decode($queryJson);
     // $earningData = json_decode($earningJson);
 
     // echo "<pre>";
@@ -176,7 +177,25 @@
                                 999
                             </p>
                         </div>
-                        <a href="#">View More <i class="fas fa-arrow-right"></i></a>
+                        <a href="./booking.php">View More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <div id="Queries" class="info-box user-item">
+                        <div class="heading">
+                            <h5>Queries</h5>
+                            <div class="info">
+                                <i class="fas fa-user-lock"></i>
+                            </div>
+                        </div>
+                        <div class="info-content">
+                            <p>Total Queries</p>
+                            <p class="num" data-target="<?php 
+                                    echo count($queryData);
+                                ?>">
+                                999
+                            </p>
+                        </div>
+                        <a href="./queries.php">View More <i class="fas fa-arrow-right"></i></a>
                     </div>
 
                 </div>

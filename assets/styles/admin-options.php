@@ -13,7 +13,8 @@
     #customer #head,
     #route #head,
     #seat #head,
-    #bus #head
+    #bus #head,
+    #query #head
     {
         /* display: flex;
         justify-content: space-between; */
@@ -53,7 +54,8 @@
     #customer,
     #route,
     #bus,
-    #seat
+    #seat,
+    #query 
     {
         padding: 0 1rem;
     }
@@ -62,6 +64,7 @@
     #customer-results > div,
     #route-results > div,
     #bus-results > div
+    #query-results > div
     {
         margin-bottom: 0.5rem;
     }
@@ -69,7 +72,8 @@
     #booking-results button,
     #customer-results button,
     #route button,
-    #bus-results button
+    #bus-results button,
+    #query-results button
     {
         /* padding: 0.3rem 1rem; */
         border-radius: 5px;
@@ -104,7 +108,9 @@
     #route .edit-button,
     #route .delete-button,
     #customer .edit-button,
-    #customer .delete-button{
+    #customer .delete-button,
+    #query .delete-button,
+    #query .reply-button{
         padding: 0.3rem 0.7rem;
     }
     /* #booking table{
@@ -120,7 +126,8 @@
         color: white;
     }
 
-    .edit-button{
+    .edit-button,
+    .reply-button{
         background-color: #4370E2;
     }
 
@@ -129,7 +136,8 @@
     }
 
     .edit-button,
-    .delete-button{
+    .delete-button,
+    .reply-button{
         font-size: 10px
     }
 
@@ -157,9 +165,10 @@
     }
 
     #noRoutes,
-    #noCustomers{
-        background-color: black;
-        color: white;
+    #noCustomers,
+    #noQueries{
+        background-color: #FFFFFF60;
+        color: black;
     }
 
     /* For seat.html */

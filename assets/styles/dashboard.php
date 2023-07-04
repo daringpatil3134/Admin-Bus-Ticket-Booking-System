@@ -53,87 +53,100 @@
     }
     /* START-hardcoding */
     #Booking{
-        border-color: #3e93d9;
+        border-color: #448aff;
     }
 
     #Booking h5{
-        background-color: #3e93d9;
+        background-color: #448aff;
     }
     #Booking a{
-        color: #3e93d9;
-    }
-
-    #Earning {
-        border-color: #23bf29;
-    }
-
-    #Earning a{
-        color: #23bf29;
+        color: #448aff;
     }
 
     #Bus {
-        border-color: #009688;
+        border-color: #1565c0;
     }
 
     #Bus h5{
-        background-color: #009688;
+        background-color: #1565c0;
     }
 
     #Bus a{
-        color: #009688;
+        color: #1565c0;
     }
 
     #Route{
-        border-color: #f44336;
+        border-color: #009688;
     }
 
     #Route h5{
-        background-color: #f44336;
+        background-color: #009688;
     }
 
     #Route a{
-        color: #f44336;
+        color: #009688;
     }
 
     #Seat{
-        border-color: #A66314;
+        border-color: #8bc34a;
     }
 
     #Seat h5{
-        background-color: #A66314;
+        background-color: #8bc34a;
     }
 
     #Seat a{
-        color: #A66314;
+        color: #8bc34a;
     }
 
     #Customer{
-        border-color: #2D2B28;
+        border-color: #ffc107;
     }
 
     #Customer h5{
-        background-color: #2D2B28;
+        background-color: #ffc107;
     }
 
     #Customer a{
-        color: #2D2B28;
+        color: #ffc107;
     }
 
     #Admin{
-        border-color: #607d8b;
+        border-color: #ff9800;
     }
 
     #Admin h5{
-        background-color: #607d8b;
-    }
-
-    #Earning h5{
-        background-color: #23bf29;
+        background-color: #ff9800;
     }
 
     #Admin a{
         color: #607d8b;
     }
+
+    #Earning h5{
+        background-color: #f44336;
+    }
+
+    #Earning {
+        border-color: #f44336;
+    }
+
+    #Earning a{
+        color: #f44336;
+    }
+
+    #Queries h5{
+        background-color: #ad1457;
+    }
+
+    #Queries {
+        border-color: #ad1457;
+    }
+
+    #Queries a{
+        color: #ad1457;
+    }
+
     /* END-hardcoding */
 
 

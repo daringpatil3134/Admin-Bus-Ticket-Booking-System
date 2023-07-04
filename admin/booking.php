@@ -54,7 +54,6 @@
                 $route = $route_source . " &rarr; " . $route_destination;
                 $booked_seat = $_POST["seatInput"];
                 $amount = $_POST["bookAmount"];
-                // $dep_timing = $_POST["dep_timing"];
 
                 $booking_exists = exist_booking($conn,$customer_id,$route_id);
                 $booking_added = false;
@@ -175,6 +174,7 @@
                 }
 
             }
+            /*
             if(isset($_POST["delete"]))
             {
                 // DELETE BOOKING
@@ -221,10 +221,57 @@
                 }
 
                 // Message
-                echo '<div class="my-0 alert alert-'.$messageStatus.' alert-dismissible fade show" role="alert">
+                echo '<div class="my-0 alert alert-'.$seats.' alert-dismissible fade show" role="alert">
                 <strong>'.$messageHeading.'</strong> '.$messageInfo.'
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>';
+            }*/
+            if (isset($_POST["delete"])) {
+                // DELETE BOOKING
+                $id = $_POST["id"];
+                $route_id = $_POST["route_id"];
+            
+                // Delete the booking with id => id
+                $deleteSql = "DELETE FROM `bookings` WHERE `bookings`.`id` = $id";
+                $deleteResult = mysqli_query($conn, $deleteSql);
+                $rowsAffected = mysqli_affected_rows($conn);
+            
+                $messageStatus = "danger";
+                $messageInfo = "";
+                $messageHeading = "Error!";
+            
+                if (!$rowsAffected) {
+                    $messageInfo = "Record Doesn't Exist";
+                } elseif ($deleteResult) {
+                    $messageStatus = "success";
+                    $messageInfo = "Booking Details deleted";
+                    $messageHeading = "Successful!";
+            
+                    // Update the Seats table
+                    $bus_no = get_from_table($conn, "routes", "route_id", $route_id, "bus_no");
+                    $seats = get_from_table($conn, "seats", "bus_no", $bus_no, "seat_booked");
+            
+                    // Extract the seat no. that needs to be deleted
+                    $booked_seats = explode(",", $_POST["booked_seat"]);
+            
+                    $seats = explode(",", $seats);
+            
+                    // Remove all booked seats from the seats array
+                    $updatedSeats = array_diff($seats, $booked_seats);
+            
+                    $updatedSeats = implode(",", $updatedSeats);
+            
+                    $updateSeatSql = "UPDATE `seats` SET `seat_booked` = '$updatedSeats' WHERE `seats`.`bus_no` = '$bus_no';";
+                    mysqli_query($conn, $updateSeatSql);
+                } else {
+                    $messageInfo = "Your request could not be processed due to technical issues on our part. We regret the inconvenience caused.";
+                }
+            
+                // Message
+                echo '<div class="my-0 alert alert-' . $messageStatus . ' alert-dismissible fade show" role="alert">
+                        <strong>' . $messageHeading . '</strong> ' . $messageInfo . '
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>';
             }
         }
         ?>
@@ -483,7 +530,7 @@
                                 <tr>
                                     <td id="seat-11" data-name="11">11</td>
                                     <td id="seat-12" data-name="12">12</td>
-                                    <td id="seat-131" data-name="13">13</td>
+                                    <td id="seat-13" data-name="13">13</td>
                                     <td id="seat-14" data-name="14">14</td>
                                     <td id="seat-15" data-name="15">15</td>
                                     <td id="seat-16" data-name="16">16</td>

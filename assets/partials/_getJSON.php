@@ -35,7 +35,7 @@
     $busJson = json_encode($arr);
 
     // Booking JSON
-    $bookingSql = "Select * from bookings";
+    $bookingSql = "SELECT * from bookings";
     $resultBookingSql = mysqli_query($conn, $bookingSql);
     $arr = array();
     while($row = mysqli_fetch_assoc($resultBookingSql))
@@ -49,6 +49,14 @@
     while($row = mysqli_fetch_assoc($resultAdminSql))
         $arr[] = $row;
     $adminJson = json_encode($arr);
+
+    // Queries JSON
+    $querySql = "SELECT * from queries";
+    $resultQuerySql = mysqli_query($conn, $querySql);
+    $arr = array();
+    while($row = mysqli_fetch_assoc($resultQuerySql))
+        $arr[] = $row;
+    $queryJson = json_encode($arr);
 
     //Earning JSON
     // $result = mysqli_query($conn, 'SELECT SUM(booked_amount) AS value_sum FROM bookings'); 

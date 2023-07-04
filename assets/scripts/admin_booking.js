@@ -252,7 +252,61 @@ function convertToArray(routeSelected)
   return arr;
 }
 
+// Selecting Seats
+const seatDiagram = document.querySelector("#seatsDiagram");
+const seatInput = document.querySelector("#seatInput");
+seatDiagram.addEventListener("click", selectSeat);
+let selected_ids = []; // Array to store selected seat IDs
+let amount = 0;
+let num = 0;
 
+function selectSeat(evt) {
+  if (
+    evt.target.nodeName === "TD" &&
+    !evt.target.className.includes("space") &&
+    !evt.target.className.includes("notAvailable")
+  ) {
+    const seatID = evt.target.dataset.name;
+
+    // Check if seat is already selected
+    const seatIndex = selected_ids.indexOf(seatID);
+    const isSelected = seatIndex !== -1;
+
+    if (!isSelected) {
+      // Add seat ID to selected_ids array
+      selected_ids.push(seatID);
+      evt.target.classList.add("selected");
+      num++;
+    } else {
+      // Remove seat ID from selected_ids array
+      selected_ids.splice(seatIndex, 1);
+      evt.target.classList.remove("selected");
+      num--;
+    }
+
+    // Update seatInput value with comma-separated seat IDs
+    seatInput.value = selected_ids.join(",");
+
+    if (selected_ids.length > 0) {
+      //Put a value for amount
+      const sourceSelected = document.querySelector("#sourceSearch").value;
+      const destSelected  = document.querySelector("#destinationSearch").value;
+      const citiesArr = convertToArray(document.querySelector("#routeSearch").dataset.id);
+
+      console.log(sourceSelected, destSelected, citiesArr);
+      const stepCost = document.querySelector("#routeSearch").dataset.stepcost;
+
+      const amountperseat = (citiesArr.indexOf(destSelected) - citiesArr.indexOf(sourceSelected)) * parseInt(stepCost);
+      amount = parseInt(amountperseat) * parseInt(num);
+     
+      document.querySelector("#bookAmount").value = amount;
+    } else {
+      document.querySelector("#bookAmount").value = "";
+    }
+  }
+}
+
+/*
 // Selecting Seats
 const seatDiagram = document.querySelector("#seatsDiagram");
 const seatInputInput = document.querySelector("#seatInput");
@@ -292,7 +346,7 @@ function selectSeat(evt)
     }
   }
 }
-
+*/
 
 
 
