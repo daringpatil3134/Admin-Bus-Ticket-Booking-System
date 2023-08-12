@@ -65,7 +65,7 @@
                             <p class="num" data-target="<?php 
                                     echo count($bookingData);
                                 ?>">
-                                999
+                                0
                             </p>
                         </div>
                         <a href="./booking.php">View More <i class="fas fa-arrow-right"></i></a>
@@ -82,7 +82,7 @@
                             <p class="num" data-target="<?php 
                                     echo count($busData);
                                 ?>">
-                                999
+                                0
                             </p>
                         </div>
                         <a href="./bus.php">View More <i class="fas fa-arrow-right"></i></a>
@@ -99,7 +99,7 @@
                             <p class="num" data-target="<?php 
                                     echo count($routeData);
                                 ?>">
-                                999
+                                0
                             </p>
                         </div>
                         <a href="./route.php">View More <i class="fas fa-arrow-right"></i></a>
@@ -114,9 +114,9 @@
                         <div class="info-content">
                             <p>Total Seats</p>
                             <p class="num" data-target="<?php 
-                                    echo 38 * count($busData);
+                                    echo 38*count($busData);
                                 ?>">
-                                999
+                                0
                             </p>
                         </div>
                         <a href="./seat.php">View More <i class="fas fa-arrow-right"></i></a>
@@ -136,7 +136,7 @@
                             <p class="num" data-target="<?php 
                                     echo count($customerData);
                                 ?>">
-                                999
+                                0
                             </p>
                         </div>
                         <a href="./customer.php">View More <i class="fas fa-arrow-right"></i></a>
@@ -153,7 +153,7 @@
                             <p class="num" data-target="<?php 
                                     echo count($adminData);
                                 ?>">
-                                999
+                                0
                             </p>
                         </div>
                         <a href="#admin">View More <i class="fas fa-arrow-right"></i></a>
@@ -174,7 +174,7 @@
                                     $sum = $row['value_sum'];
                                     echo $sum;
                                 ?>">
-                                999
+                                0
                             </p>
                         </div>
                         <a href="./booking.php">View More <i class="fas fa-arrow-right"></i></a>
@@ -192,7 +192,7 @@
                             <p class="num" data-target="<?php 
                                     echo count($queryData);
                                 ?>">
-                                999
+                                0
                             </p>
                         </div>
                         <a href="./queries.php">View More <i class="fas fa-arrow-right"></i></a>

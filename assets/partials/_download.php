@@ -219,7 +219,7 @@
         <button class="btn btn-primary">Print</button>
     </div>
     <div style="margin-top: -3.15rem; text-align: right;">
-            <a href="http://localhost/SimpleBusTicket-PHP/" class="btn btn-primary">Go Back</a>
+            <a href="../../" class="btn btn-primary">Go Back</a>
     </div>
 
 <script>

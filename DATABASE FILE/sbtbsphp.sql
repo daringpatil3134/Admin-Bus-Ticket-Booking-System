@@ -97,6 +97,7 @@ CREATE TABLE `customers` (
 -- Dumping data for table `customers`
 --
 
+
 INSERT INTO `customers` (`id`, `customer_id`, `customer_name`, `customer_phone`, `customer_created`) VALUES
 (34, 'CUST-2114034', 'Richhariya Shubh', '7002001200', '2023-10-16 22:09:12'),
 (35, 'CUST-8996235', 'Divyansh Bhandari', '4012222222', '2023-10-17 22:30:23'),
@@ -197,8 +198,14 @@ CREATE TABLE `admins` (
 -- Dumping data for table `admins`
 --
 
-INSERT INTO `admins` (`admin_id`, `admin_fullname`, `admin_name`, `admin_password`, `admin_created`) VALUES
-(1, 'Pranav Patil', 'patilpranav2003', '$2y$10$7rLSvRVyTQORapkDOqmkhetjF6H9lJHngr4hJMSM2lHObJbW5EQh6', '2023-06-02 13:55:21');
+INSERT INTO `admins` (`admin_id`, `admin_fullname`, `admin_name`, `admin_password`, `admin_created`,`pp`) VALUES
+(1, 'Default User', 'defaultuser1', '$2y$10$7rLSvRVyTQORapkDOqmkhetjF6H9lJHngr4hJMSM2lHObJbW5EQh6', '2023-06-02 13:55:21','default-pp.png');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `queries`
+--
 
 CREATE TABLE `queries` (
   `id` int(100) NOT NULL,
@@ -257,7 +264,7 @@ ALTER TABLE `seats`
 ALTER TABLE `admins`
   ADD PRIMARY KEY (`admin_id`);
 
--- Indexes for table `bookings`
+-- Indexes for table `queries`
 --
 ALTER TABLE `queries`
   ADD PRIMARY KEY (`id`);
