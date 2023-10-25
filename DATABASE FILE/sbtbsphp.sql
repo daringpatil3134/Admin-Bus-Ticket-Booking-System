@@ -190,7 +190,7 @@ CREATE TABLE `admins` (
   `admin_fullname` varchar(100) NOT NULL,
   `admin_name` varchar(30) NOT NULL,
   `admin_password` varchar(255) NOT NULL,
-  `pp` varchar(255) NOT NULL DEFAULT 'default-pp.png'
+  `pp` varchar(255) NOT NULL DEFAULT 'default-pp.png',
   `admin_created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
