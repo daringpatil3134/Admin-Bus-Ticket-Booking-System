@@ -166,7 +166,8 @@
 
     #nav{
         background-color: #E5CAA360;
-        border-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        border-bottom-left-radius: 1rem;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -285,7 +286,7 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        scroll-margin-top: 200px;
+        scroll-margin-top: 230px;
     }
 
     #pnr-form{
@@ -660,9 +661,8 @@
 
             
         #route-search-form{
-            position: absolute;
-            top: 28%;
-            right: 10%;
+            position: relative;
+            top: 25%;
             width: 20rem;
             padding: 1rem 2rem;
                       
@@ -718,9 +718,6 @@
 
 
         #route-search-form{
-            position: relative;
-            top: 20%;
-            right: -18.5%;
             width: 60rem;
             padding: 2.5rem 2rem;
         }
