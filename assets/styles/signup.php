@@ -74,7 +74,8 @@
 
         #add-admin > div:last-child{
             background-image: url("../assets/img/tranbus.png");
-            background-position: 50% 60%;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
         }
 
         form{
